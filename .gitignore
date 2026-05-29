@@ -12,3 +12,6 @@ outputs/
 node_modules/
 dist/
 build/
+
+# Local tooling
+.claude/
