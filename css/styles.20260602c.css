@@ -216,11 +216,22 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
 }
 
-.navbar__phone {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.02em;
-  color: var(--color-accent) !important;
+/* Header call-to-action button (overrides .navbar__nav a defaults) */
+.navbar__nav a.navbar__call {
+  color: #1a1a2e;
+  letter-spacing: 0.01em;
+}
+
+.navbar__nav a.navbar__call:hover {
+  color: #1a1a2e;
+  background: #E8710A;
+  text-decoration: none;
+}
+
+.navbar__call svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .navbar__toggle {
