@@ -1,9 +1,9 @@
-/* Lab Access · Original Design · Medical Blue Theme
- * · nav: Fixed sticky navbar · hero: Blue gradient
+/* Lab Access · Brand Orange Theme
+ * · nav: Fixed sticky navbar · hero: Orange gradient
  * · contrast: pass (WCAG 2.1 AA)
  */
 
-@import url('tokens.css');
+@import url('tokens.20260602.css');
 
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; }

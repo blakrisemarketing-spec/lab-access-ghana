@@ -22,8 +22,8 @@ no package.json. You edit the files and they ship as-is.
 ```
 index.html                 # the entire site (one page, anchor-nav sections)
 css/
-  tokens.css               # design tokens (colours, type scale, spacing, motion)
-  styles.20260602c.css     # all component styles  ← NOTE the dated filename (see §6)
+  tokens.20260602.css      # design tokens (colours, type scale, spacing, motion) ← dated, see §6
+  styles.20260602d.css     # all component styles  ← NOTE the dated filename (see §6)
 js/
   main.js                  # contact form → WhatsApp, smooth scroll, mobile menu toggle
 images/                    # logo, hero, about, founder, package photos
@@ -111,9 +111,17 @@ a 1.25 major-third in tokens. Responsive breakpoints at 960px and 640px (375px t
   - A `?v=...` query-string cache-bust **does NOT work** here.
   - If you change CSS but keep the same filename, the old CSS can be served for up to a
     week. **So: rename the stylesheet to a brand-new filename on every CSS change** and
-    update the `<link>` in `index.html`. That's why it's `styles.20260602c.css` (the
-    `a`/`b`/`c` suffixes are successive same-day renames). HTML (`index.html`) is NOT
+    update the `<link>` in `index.html`. That's why it's `styles.20260602d.css` (the
+    `a`..`d` suffixes are successive same-day renames). HTML (`index.html`) is NOT
     long-cached, so its filename stays constant.
+  - **⚠️ This applies to `tokens.css` too — and it bit us.** `tokens.css` kept a stable
+    name through several CSS renames, so when the theme went blue→orange (the accent
+    variables live in tokens), the CDN kept serving the stale *blue* `tokens.css` while
+    the new orange `styles` file loaded → the site rendered a **blue/orange mix** (var()-
+    driven elements blue, hardcoded-orange bits orange). Fix was to rename tokens to
+    `tokens.20260602.css` and update BOTH the `<link>` in `index.html` AND the
+    `@import url(...)` at the top of the styles file. **Rule: if you edit `tokens`,
+    rename it too** (and bump the styles file, since its `@import` line changes).
 - **Verifying the live site:** request **bare URLs** (no `?cb=` query). Appending a random
   query string can return a misleading 404 from the CDN even when the bare path is 200.
   Example check:
