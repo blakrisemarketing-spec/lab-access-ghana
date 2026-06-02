@@ -490,6 +490,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ── Founder's note ── */
+.founder {
+  /* soft warm tint so the note stands out without clashing */
+  background: #FCF2E8;
+}
+
 .founder__inner {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -535,7 +540,7 @@ p:last-child { margin-bottom: 0; }
 .founder__note {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-xs);
 }
 
 .founder__note::before {
