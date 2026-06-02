@@ -1,4 +1,4 @@
-/* Lab Access · Original Design · Medical Blue Theme */
+/* Lab Access · Brand Orange Theme */
 
 :root {
   /* ── Paper ── */
@@ -16,11 +16,12 @@
   --color-rule-2:   #b8c4d0;
   --color-muted:    #8a94a0;
 
-  /* ── Accent ── */
-  --color-accent:       #1A73E8;
+  /* ── Accent (brand orange) ── */
+  --color-accent:       #C2410C;  /* deep orange: links, small accent text — WCAG AA on white */
   --color-accent-ink:   #ffffff;
-  --color-accent-hover: #1557b0;
-  --color-focus:        #4a90e2;
+  --color-accent-hover: #9A3412;
+  --color-focus:        #F2820C;
+  --brand-bright:       #F7941E;   /* the logo orange — buttons (dark text) + decorative pops */
 
   /* ── Success / CTA ── */
   --color-success:      #28a745;
